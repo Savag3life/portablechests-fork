@@ -49,6 +49,8 @@ public final class PortableChests extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        instance = this;
+
         saveDefaultConfig();
 
         this.database = new Database();
@@ -111,7 +113,6 @@ public final class PortableChests extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new cyanogenoid.portablechests.listeners.BlockListener(), this);
         getServer().getPluginManager().registerEvents(new cyanogenoid.portablechests.listeners.InventoryListener(), this);
 
-        instance = this;
     }
 
     @Override
