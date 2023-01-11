@@ -20,6 +20,7 @@ public class Database {
 
         if (!dataFile.exists()) {
             try {
+                dataFile.getParentFile().mkdirs();
                 dataFile.createNewFile();
             } catch (IOException er) {
                 er.printStackTrace();
