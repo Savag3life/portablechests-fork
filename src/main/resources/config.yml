@@ -1,0 +1,61 @@
+config-version: 1
+
+#Containers to make portable
+portable-barrels: true
+portable-blast-furnaces: true
+portable-brewing-stands: true
+portable-chests: true
+portable-dispensers: true
+portable-droppers: true
+portable-furnaces: true
+portable-hoppers: true
+portable-smokers: true
+
+#Can containers stack when they have exactly the same content?
+allow-stacking: true
+
+#1 for container inside a container, 2 for container inside a container inside a container, so on...
+max-nesting: 1
+
+#Message sent to the player when the nesting limit is reached
+nesting-limit-message: §cNesting limit reached!
+
+#Penalties (PotionEffectType) to apply when a player holds a portable container in their inventory
+#Check https://papermc.io/javadocs/paper/1.14/org/bukkit/potion/PotionEffectType.html
+#Format: <EFFECT>: <LEVEL>
+penalties:
+  #-- Examples --
+  #SLOW: 1
+  #SLOW_DIGGING: 0
+
+#The higher the number, the longer the penalties will last
+penalty-duration: 50 #ticks
+
+#The lower the number, the faster the penalties will be updated
+# !! MAY INDUCE LAGS IF TOO LOW !!
+penalty-update: 25 #ticks
+
+#The enchantment required on the handling tool to create a portable container (one only enchantment supported)
+#Check https://papermc.io/javadocs/paper/1.14/org/bukkit/enchantments/Enchantment.html
+#Format: <ENCHANTMENT>: <LEVEL>
+enchantment-required:
+  #-- Example --
+  #SILK_TOUCH: 1
+
+#Should the plugin ignore items with custom names?
+ignore-custom-named: false
+
+#The worlds where portable containers can be created in
+create-in-worlds:
+  - world
+  - nether
+  - end
+
+#The worlds where portable containers can be placed in
+place-in-worlds:
+  - world
+  - nether
+  - end
+
+#Message sent to the player when they cannot place a container in that world
+cannot-place-message: §cYou cannot place a portable container in this world!
